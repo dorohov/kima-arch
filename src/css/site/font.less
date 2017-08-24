@@ -1,0 +1,35 @@
+.include-custom-font(
+	@family: @visby, 
+	@src-name: @visby, 
+	@weight: normal, 
+	@style: normal
+	){
+	@font-face{			
+		font-family: "@{family}";			
+		src:	url('@{url-path-fonts}/@{src-name}.woff2') format('woff2'),
+				url('@{url-path-fonts}/@{src-name}.woff') format('woff');
+		font-weight: @weight;
+		font-style: @style;		
+	}
+}
+.include-custom-icon(@family: @icon, @weight: normal, @style: normal){
+	@font-face{			
+		font-family: "@{family}";			
+		src: url('@{url-path-fonts}/@{family}.woff') format('woff');
+		font-weight: @weight;
+		font-style: @style;		
+	}
+}
+
+.include-custom-font(
+	@family: @visby,
+	@src-name: @visby-thin,
+	@weight: 400, 
+	@style: normal
+	);
+.include-custom-font(
+	@family: @visby,
+	@src-name: @visby-heavy,
+	@weight: 700, 
+	@style: normal
+	);

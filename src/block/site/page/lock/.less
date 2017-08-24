@@ -1,0 +1,165 @@
+.lock-page__{ 
+	&block{
+		position: relative;
+		overflow: hidden;
+		color: @b-color-1;		
+		a{
+			&, &:focus, &:hover{
+				color: @b-color-1;
+			}
+			&[href^="mailto:"],
+			&[href^="tel:"]{
+				&, &:focus, &:hover{
+					color: @b-color-1;
+				}
+			}
+		}
+		@media @media-size-xs {
+			padding-top: 30px;
+		}
+	}
+	&bg{
+		background-image: url("@{url-path-img}/default/bg-lock.jpg");
+		width: 100%;
+		margin-top: 30px;
+		@media @media-size-xs-p {
+			height: 250px;
+		}
+		@media @media-size-xs-l {
+			height: 450px;
+		}
+		@media @media-notsmart {
+			margin: 0;			
+			position: absolute;
+			z-index: 1;
+			left: 0;
+			top: 0;
+			bottom: 0;
+		    max-width: 1225px;
+	   		width: 66vw;
+	   		height: auto;
+		}
+		@media @media-size-sm-p {
+			width: 100%;
+			bottom: 50%;
+		}
+	}
+	&container{
+		position: relative;
+		z-index: 3;
+	}
+	&row{
+		@media @media-size-xs {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			margin-top: -20px;
+		}
+		@media @media-notsmart {
+			position: relative;
+			min-height: 100vh;
+		}
+	}
+	&cols{
+		@media @media-size-xs{
+			padding-top: 20px;
+			text-align: center;
+			.makeCols(10, 12);
+			&.is--contacts{
+				order: 5;
+			}
+			&.is--logotip{
+				order: 1;
+			}
+			&.is--services{
+				order: 3;
+			}
+			&.is--address{
+				order: 4;
+			}
+			&.is--status{
+				order: 2;
+			}
+		}
+		@media @media-notsmart {
+			position: absolute;
+			&.is--contacts{
+				right: 0;
+				top: 3.7vw;
+				max-width: 480px;
+				min-width: 230px;
+				width: 28vw;
+			}
+			&.is--logotip{
+				right: 4vw;    
+				top: 50%;
+    			transform: translateY(-70%);
+			}
+			&.is--services{
+				bottom: 50%;
+				right: 13.5vw;
+				transform: translateY(193%);
+			}
+			&.is--address{
+				bottom: 3.6vw;
+				left: 0;
+			}
+			&.is--status{
+				bottom: 3.6vw;
+				right: 2vw;
+			}
+		}
+	}
+	&contacts-row{
+		justify-content: space-between;
+	}
+	&contacts-cols{
+		@media @media-size-xs{
+			.makeCols(12, 12); 
+		}
+	}
+	&contacts-item{
+		.calcFontSize(20, 24, 320, 1680);
+		.calcLineHeight(20, 24, 320, 1680);
+		span{
+			font-weight: 700;
+			color: @b-color-2;
+		}
+	}
+	&logotip{
+		margin: 0 auto;
+		width: 100px;
+		@media @media-notsmart {
+			min-width: 300px;
+			max-width: 580px;
+			width: 32vw;
+		}
+	}
+	&services-list{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: @b-color-2;
+		font-size: @b-fs + 2;
+		letter-spacing: 2px;
+		li{margin-bottom: 15px;}
+	}
+	&address-item{
+		.calcFontSize(20, 24, 320, 1680);
+		.calcLineHeight(28, 32, 320, 1680);
+		span{
+			font-weight: 700;
+		}
+		@media @media-size-sm-p {
+			max-width: 600px;
+			min-width: 350px;
+			width: 34vw;
+		}
+	}
+	&status-item{
+		.calcFontSize(26, 46, 320, 1680);
+		.calcLineHeight(26, 46, 320, 1680);
+	}
+}
